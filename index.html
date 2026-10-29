@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сайт собирается</title>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Сайт собирается">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Евгения Сергеева",
+  "jobTitle": "консультант по цифровой психологии и нумерологии",
+  "description": "Помогаю исследовать личностные особенности, привычные модели поведения и повторяющиеся жизненные сценарии через интерпретацию даты рождения и обсуждение индивидуального запроса."
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --шрифт-заголовков: 'Cormorant Garamond', Georgia, serif;
+  --шрифт-текста: Manrope, 'Segoe UI', sans-serif;
+  --цвет-фон: #2C2E38; --цвет-фон-2: #393B48; --цвет-фон-карточки: #414452;
+  --цвет-текст: #F7F5F2; --цвет-текст-мягкий: #C7C7D0; --цвет-текст-тихий: #9395A1;
+  --цвет-акцент: #C9A86A; --цвет-акцент-тёмный: #AD8C4D; --цвет-акцент-яркий: #E0C085; --цвет-акцент-глубже: #B29256; --цвет-акцент-маркер: #C9A86A; --цвет-на-акценте: #2C2E38;
+  --цвет-линия: #505362; --цвет-тёмный-фон: #22242D; --цвет-тёмный-фон-2: #2C2E38; --цвет-тёмный-текст: #F7F5F2; --цвет-тёмный-фон-3: #272934; --цвет-тёмный-фон-4: #343641;
+  --цвет-тёплый: #C9A86A; --цвет-тёплый-мягкий: #E2CEA8;
+  --цвет-стекло: color-mix(in srgb, #22242D 88%, transparent); --тень: 0 12px 34px color-mix(in srgb, #15161C 40%, transparent); --тень-чип: 0 10px 30px color-mix(in srgb, #15161C 48%, transparent); --тень-глубокая: 0 24px 60px color-mix(in srgb, #15161C 56%, transparent); --тень-спутник: 0 30px 60px color-mix(in srgb, #15161C 70%, transparent); --тень-плиты: 0 40px 100px color-mix(in srgb, #15161C 78%, transparent);
+  --кегль-h1: clamp(39px, 6.8vw, 66px); --кегль-h2: clamp(29px, 4.3vw, 46px); --кегль-текст: clamp(16px, 1vw, 17px); --кегль-лид: clamp(17px, 1.1vw, 19px); --кегль-мелкий: 14px; --кегль-кикер: clamp(14px, 1.1vw, 15px); --кегль-цифра: 32px; --разрядка-кикера: .12em;
+  --отступ-секции: clamp(56px, 9vw, 116px); --отступ-блока: clamp(16px, 2vw, 26px); --отступ-секции-тихо: clamp(44px, 7vw, 90px); --отступ-секции-громко: clamp(64px, 10.5vw, 132px); --ширина: 1100px; --ширина-колонки: 540px; --радиус: 12px; --радиус-малый: 6px; --радиус-карточки: 16px; --радиус-плитки: 20px; --радиус-телефон: 46px; --кнопка-радиус: 10px; --радиус-модуля: 14px; --нить: 1px; --плавность: cubic-bezier(.2,.7,.2,1); --длительность: .25s;
+  --цвет-тёплый-тёмный: #876931;
+}
+</style>
+<script>
+(function () {
+  var ЭТАЛОН = 0.535;                  // очко Open Sans — текстовой гарнитуры утверждённых макетов
+  var ПОТОЛОК = 1.2, МЁРТВАЯ = 0.02;   // выше потолка расползается раскладка; ближе к единице не трогаем вовсе
+  var КОМПЬЮТЕР = "(min-width: 900px)";
+  var ТОКЕНЫ = ["--кегль-текст", "--кегль-лид", "--кегль-мелкий", "--кегль-кикер"];
+  var корень = document.documentElement;
+  var холст = document.createElement("canvas").getContext("2d");
+  var ждём = 0;
+
+  function мера(буква) { var м = холст.measureText(буква); return (м && м.actualBoundingBoxAscent) || 0; }
+
+  function применить() {
+    ждём = 0;
+    if (!холст) { return; }
+
+    for (var i = 0; i < ТОКЕНЫ.length; i++) { корень.style.removeProperty(ТОКЕНЫ[i]); }
+    var стиль = getComputedStyle(корень), стек = стиль.getPropertyValue("--шрифт-текста").trim();
+    if (!стек) { return; }
+    холст.font = "400 100px " + стек;
+
+    var очко = Math.max(мера("х"), мера("x")) / 100;
+    if (!(очко > 0)) { return; }
+    var k = Math.round(Math.min(ПОТОЛОК, Math.max(1, ЭТАЛОН / очко)) * 1000) / 1000;
+    if (k - 1 < МЁРТВАЯ || !matchMedia(КОМПЬЮТЕР).matches) { k = 1; }
+    корень.setAttribute("data-очко", очко.toFixed(3));      // чтобы проверка могла сказать числа вслух
+    корень.setAttribute("data-поправка", k.toFixed(3));
+    if (k === 1) { return; }
+    for (i = 0; i < ТОКЕНЫ.length; i++) {
+      var было = стиль.getPropertyValue(ТОКЕНЫ[i]).trim();
+      if (было) { корень.style.setProperty(ТОКЕНЫ[i], "calc((" + было + ") * " + k + ")"); }
+    }
+  }
+
+  применить();
+
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(применить); }
+
+  addEventListener("resize", function () { ждём = ждём || requestAnimationFrame(применить); });
+})();
+</script>
+</head>
+<body>
+<section class="блок блок--первый-экран первый-экран--сцена тёмный фон--пятна" id="экран-1" data-тип="первый-экран" data-схема="сцена" data-картинка="фото">
+  <link rel="stylesheet" href="img/01-первый-экран-вариант-4.css">
+  <main class="hero" aria-labelledby="hero-title">
+    <div class="hero__art" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Евгения Сергеева, на главную">
+        <span class="brand__mark" aria-hidden="true">ЕС</span>
+        <span class="brand__text">
+          <span class="brand__name">Евгения Сергеева</span>
+          <span class="brand__line">Цифровая психология</span>
+        </span>
+      </a>
+      <p class="topbar__trust">Один вопрос — один разбор</p>
+    </header>
+
+    <div class="hero__layout" id="top">
+      <section class="hero__copy">
+        <p class="eyebrow"><span aria-hidden="true"></span><span class="eyebrow__label">Личность через числа<span class="eyebrow__mobile-break"><br></span>&nbsp; | &nbsp;Нумерология</span></p>
+        <h1 id="hero-title">
+          <span class="title--desktop">Не ищем ответ на всю<br>жизнь. Разбираем один<br><em>важный вопрос</em></span>
+          <span class="title--mobile">Не ищем ответ на всю жизнь. Разбираем один <em>важный вопрос</em></span>
+        </h1>
+        <p class="lead">Индивидуальный нумерологический разбор по дате рождения и вашему запросу: поймёте, в чём проблема ситуации, и получите конкретные шаги.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="https://t.me/SergeevaConsultBot" target="_blank" rel="noopener">Отправить заявку <span aria-hidden="true">↗</span></a>
+          <span class="hero__price">4&nbsp;900&nbsp;₽<small>за индивидуальный разбор</small></span>
+        </div>
+      </section>
+
+      <figure class="portrait">
+        <div class="portrait__aura" aria-hidden="true"></div>
+        <img class="portrait__image" src="img/портрет-женщины-прозрачный.webp" alt="Евгения Сергеева" fetchpriority="high" loading="lazy" decoding="async">
+        <div class="portrait__fade" aria-hidden="true"></div>
+      </figure>
+    </div>
+
+    <section class="facts" aria-label="Условия разбора">
+      <article class="fact"><span class="fact__number">01</span><p>Один вопрос — один индивидуальный разбор</p></article>
+      <article class="fact"><span class="fact__number">02</span><p>Ответ в голосовых сообщениях, без обязательного созвона</p></article>
+      <article class="fact"><span class="fact__number">03</span><p>Готовность — до двух суток после получения даты рождения и вопроса</p></article>
+      <article class="fact fact--price"><span class="fact__number">04</span><p>Стоимость — 4&nbsp;900&nbsp;₽</p></article>
+    </section>
+  </main>
+</section>
+</body>
+</html>
