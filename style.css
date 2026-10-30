@@ -1734,130 +1734,289 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 }
 
 /* экран 02 */
-#экран-02 .экран-02__сетка {
+#экран-02 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 62% 72% at 86% 49%, color-mix(in srgb, var(--цвет-акцент) 15%, transparent), transparent 70%),
+    radial-gradient(ellipse 76% 34% at 59% 104%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 18%, transparent), transparent 72%),
+    radial-gradient(ellipse 54% 47% at 3% 4%, color-mix(in srgb, var(--цвет-тёмный-текст) 7%, transparent), transparent 76%),
+    var(--цвет-фон);
+}
+
+#экран-02::before,
+#экран-02::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  border: var(--нить) solid color-mix(in srgb, var(--цвет-акцент) 45%, transparent);
+  border-radius: var(--радиус);
+  pointer-events: none;
+}
+
+#экран-02::before {
+  width: min(96vw, 1380px);
+  height: min(34vw, 500px);
+  top: clamp(470px, 43vw, 610px);
+  left: clamp(-580px, -34vw, -340px);
+  border-color: color-mix(in srgb, var(--цвет-акцент) 20%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 52px color-mix(in srgb, var(--цвет-акцент) 9%, transparent);
+  transform: rotate(-10deg);
+  opacity: 1;
+}
+
+#экран-02::after {
+  width: min(62vw, 900px);
+  height: min(48vw, 680px);
+  right: clamp(-315px, -18vw, -170px);
+  bottom: clamp(-330px, -22vw, -190px);
+  border-color: color-mix(in srgb, var(--цвет-акцент) 18%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 62px color-mix(in srgb, var(--цвет-акцент) 8%, transparent);
+  transform: rotate(26deg);
+  opacity: .8;
+}
+
+#экран-02 .блок__внутри {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(64px, 5vw, 80px);
+}
+
+#экран-02 .экран-02__декор {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 39% 62% at 80% 49%, color-mix(in srgb, var(--цвет-акцент) 20%, transparent), transparent 70%),
+    radial-gradient(ellipse 74% 23% at 50% 81%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 18%, transparent), transparent 70%),
+    linear-gradient(105deg, transparent 0 32%, color-mix(in srgb, var(--цвет-акцент) 8%, transparent) 52%, transparent 71%);
+}
+
+#экран-02 .экран-02__декор::before {
+  content: "";
+  position: absolute;
+  width: min(104vw, 1500px);
+  height: min(42vw, 610px);
+  top: 27%;
+  right: -42%;
+  border: 1px solid color-mix(in srgb, var(--цвет-акцент) 19%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 42px color-mix(in srgb, var(--цвет-акцент) 7%, transparent), 0 0 0 1px color-mix(in srgb, var(--цвет-тёмный-текст) 5%, transparent) inset;
+  transform: rotate(-8deg);
+}
+
+#экран-02 .экран-02__декор::after {
+  content: "";
+  position: absolute;
+  width: 118%;
+  height: 94%;
+  top: 5%;
+  right: 0;
+  background:
+    radial-gradient(circle at 60% 18%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 34%, transparent) 0 1px, transparent 2px),
+    radial-gradient(circle at 79% 29%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 45%, transparent) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 47% 48%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 25%, transparent) 0 1px, transparent 2px),
+    radial-gradient(circle at 74% 59%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 38%, transparent) 0 1px, transparent 2px),
+    radial-gradient(circle at 54% 78%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 32%, transparent) 0 1px, transparent 2px),
+    linear-gradient(11deg, transparent 0 61%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 11%, transparent) 64%, transparent 67%),
+    linear-gradient(17deg, transparent 0 68%, color-mix(in srgb, var(--цвет-акцент) 13%, transparent) 71%, transparent 74%),
+    radial-gradient(ellipse at 52% 61%, color-mix(in srgb, var(--цвет-тёмный-текст) 10%, transparent), transparent 48%),
+    radial-gradient(ellipse at 77% 43%, color-mix(in srgb, var(--цвет-акцент) 17%, transparent), transparent 58%);
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--цвет-акцент) 52%, transparent));
+}
+
+#экран-02 .экран-02__сфера {
+  position: absolute;
+  display: block;
+  border: 1px solid color-mix(in srgb, var(--цвет-тёплый-мягкий) 28%, transparent);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 29% 24%, color-mix(in srgb, var(--цвет-тёмный-текст) 68%, transparent) 0 2%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 18%, transparent) 10%, transparent 31%),
+    radial-gradient(circle at 63% 68%, color-mix(in srgb, var(--цвет-тёмный-фон) 46%, transparent), transparent 62%),
+    linear-gradient(140deg, color-mix(in srgb, var(--цвет-тёплый-мягкий) 20%, transparent), color-mix(in srgb, var(--цвет-акцент-тёмный) 6%, transparent) 52%, color-mix(in srgb, var(--цвет-акцент) 13%, transparent));
+  box-shadow: 0 0 28px color-mix(in srgb, var(--цвет-акцент) 17%, transparent), inset 12px 10px 28px color-mix(in srgb, var(--цвет-тёплый-мягкий) 12%, transparent), inset -16px -18px 32px color-mix(in srgb, var(--цвет-тёмный-фон) 26%, transparent);
+  filter: blur(.1px);
+}
+
+#экран-02 .экран-02__сфера--одна {
+  width: clamp(86px, 8.5vw, 132px);
+  height: clamp(86px, 8.5vw, 132px);
+  right: clamp(4%, 8vw, 13%);
+  top: 13%;
+  opacity: .38;
+}
+
+#экран-02 .экран-02__сфера--две {
+  width: clamp(44px, 4.4vw, 68px);
+  height: clamp(44px, 4.4vw, 68px);
+  right: clamp(6%, 11vw, 17%);
+  bottom: 9%;
+  opacity: .32;
+}
+
+#экран-02 .экран-02__сцена {
   display: grid;
-  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
-  gap: clamp(28px, 6vw, 88px);
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: clamp(56px, 6vw, 92px);
   align-items: start;
 }
 
 #экран-02 .экран-02__шапка {
-  position: sticky;
-  top: var(--отступ-блока);
   margin: 0;
+  padding: clamp(6px, .8vw, 12px) 0;
 }
 
 #экран-02 .экран-02__шапка h2 {
-  max-width: 12ch;
+  max-width: 21ch;
 }
 
 #экран-02 .экран-02__шапка .секция__лид {
-  max-width: 35rem;
+  max-width: 37rem;
+  color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent);
 }
 
-#экран-02 .экран-02__нить {
+#экран-02 .экран-02__вопросы {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--отступ-блока);
-  padding-left: clamp(20px, 3vw, 36px);
+  gap: 0;
+  margin: 0;
+  padding: 0 0 0 clamp(62px, 5vw, 80px);
+  list-style: none;
+  counter-reset: вопрос;
 }
 
-#экран-02 .экран-02__нить::before {
+#экран-02 .экран-02__вопросы::before {
   content: "";
   position: absolute;
-  top: clamp(20px, 2vw, 28px);
-  bottom: clamp(20px, 2vw, 28px);
-  left: 0;
-  width: var(--нить);
+  top: 18px;
+  bottom: 18px;
+  left: clamp(24px, 2.15vw, 34px);
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--цвет-акцент) 54%, transparent) 7%, color-mix(in srgb, var(--цвет-акцент) 54%, transparent) 93%, transparent);
 }
 
 #экран-02 .экран-02__вопрос {
   position: relative;
-  display: flex;
-  align-items: center;
-  min-height: clamp(116px, 12vw, 164px);
+  display: block;
   margin: 0;
-  padding: clamp(20px, 2.3vw, 32px);
-  border: var(--нить) solid;
-  border-radius: var(--радиус-карточки);
-  box-shadow: var(--тень-плиты);
+  padding: clamp(20px, 1.9vw, 28px) 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: var(--нить) solid color-mix(in srgb, var(--цвет-тёплый-мягкий) 21%, transparent);
+  text-shadow: 0 2px 12px color-mix(in srgb, var(--цвет-тёмный-фон) 24%, transparent);
 }
 
 #экран-02 .экран-02__вопрос::before {
+  counter-increment: вопрос;
+  content: counter(вопрос, decimal-leading-zero);
+  position: absolute;
+  right: calc(100% + clamp(42px, 3.35vw, 54px));
+  top: clamp(23px, 2.15vw, 31px);
+  color: color-mix(in srgb, var(--цвет-акцент) 88%, var(--цвет-тёмный-текст));
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+
+#экран-02 .экран-02__вопрос::after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: clamp(-25px, -3vw, -19px);
-  width: clamp(9px, 1vw, 12px);
-  height: clamp(9px, 1vw, 12px);
-  border-radius: var(--радиус);
-  transform: translateY(-50%);
+  right: calc(100% + clamp(20px, 1.8vw, 29px));
+  top: clamp(25px, 2.3vw, 33px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--цвет-акцент);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--цвет-акцент) 16%, transparent), 0 0 15px color-mix(in srgb, var(--цвет-акцент) 56%, transparent);
 }
+
+#экран-02 .экран-02__вопрос:last-child { border-bottom: 0; }
 
 #экран-02 .экран-02__вопрос b {
-  font-size: var(--кегль-текст);
-  line-height: 1.42;
-}
-
-#экран-02 .экран-02__вопрос--первый {
-  grid-column: 1 / -1;
-  min-height: clamp(132px, 13vw, 174px);
-}
-
-#экран-02.светлый .экран-02__нить::before {
-  background: var(--цвет-линия);
-}
-
-#экран-02.тёмный .экран-02__нить::before {
-  background: var(--цвет-линия);
-}
-
-#экран-02.светлый .экран-02__вопрос {
-  background: var(--цвет-фон-карточки);
-  border-color: var(--цвет-линия);
-}
-
-#экран-02.тёмный .экран-02__вопрос {
-  background: var(--цвет-фон-карточки);
-  border-color: var(--цвет-линия);
-}
-
-#экран-02.светлый .экран-02__вопрос::before {
-  background: var(--цвет-акцент);
-}
-
-#экран-02.тёмный .экран-02__вопрос::before {
-  background: var(--цвет-акцент);
-}
-
-#экран-02.светлый .экран-02__вопрос b {
   color: var(--цвет-текст);
+  font-size: clamp(23px, 1.8vw, 30px);
+  line-height: 1.26;
 }
 
-#экран-02.тёмный .экран-02__вопрос b {
-  color: var(--цвет-текст);
+#экран-02 .экран-02__вопрос--первый b {
+  font-size: clamp(23px, 1.8vw, 30px);
 }
 
 @media (max-width: 760px) {
-  #экран-02 .экран-02__сетка {
-    grid-template-columns: 1fr;
-    gap: var(--отступ-секции-тихо);
+  #экран-02::before {
+    width: 520px;
+    height: 190px;
+    top: 214px;
+    left: -250px;
+    right: auto;
   }
 
-  #экран-02 .экран-02__шапка {
-    position: static;
+  #экран-02::after {
+    width: 260px;
+    height: 320px;
+    right: -155px;
+    bottom: -140px;
+  }
+
+  #экран-02 .экран-02__сцена {
+    grid-template-columns: 1fr;
+    gap: clamp(42px, 12vw, 58px);
+  }
+
+  #экран-02 .блок__внутри {
+    padding-block: clamp(64px, 17vw, 86px);
   }
 
   #экран-02 .экран-02__шапка h2 {
     max-width: none;
   }
 
-  #экран-02 .экран-02__нить {
-    grid-template-columns: 1fr;
+  #экран-02 .экран-02__вопросы {
+    padding-left: 48px;
   }
 
-  #экран-02 .экран-02__вопрос--первый {
-    grid-column: auto;
+  #экран-02 .экран-02__вопросы::before {
+    left: 18px;
   }
+
+  #экран-02 .экран-02__вопрос {
+    padding: 19px 0;
+  }
+
+  #экран-02 .экран-02__вопрос b {
+    font-size: clamp(20px, 5.7vw, 24px);
+    line-height: 1.28;
+  }
+
+  #экран-02 .экран-02__вопрос::before {
+    right: calc(100% + 33px);
+    top: 22px;
+    font-size: 12px;
+  }
+
+  #экран-02 .экран-02__вопрос::after {
+    right: calc(100% + 15px);
+    top: 24px;
+    width: 8px;
+    height: 8px;
+  }
+
+  #экран-02 .экран-02__сфера--одна {
+    right: -30px;
+    top: 2%;
+    opacity: .36;
+  }
+
+  #экран-02 .экран-02__сфера--две {
+    right: -8px;
+    bottom: 10%;
+  }
+
 }
