@@ -1732,3 +1732,132 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     mask-image: linear-gradient(to bottom, black 74%, transparent); -webkit-mask-image: linear-gradient(to bottom, black 74%, transparent); }
   .блок.первый-экран--разворот .чип--автор { top: calc(var(--лицо-тел) + 6.7em); }
 }
+
+/* экран 02 */
+#экран-02 .экран-02__сетка {
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  gap: clamp(28px, 6vw, 88px);
+  align-items: start;
+}
+
+#экран-02 .экран-02__шапка {
+  position: sticky;
+  top: var(--отступ-блока);
+  margin: 0;
+}
+
+#экран-02 .экран-02__шапка h2 {
+  max-width: 12ch;
+}
+
+#экран-02 .экран-02__шапка .секция__лид {
+  max-width: 35rem;
+}
+
+#экран-02 .экран-02__нить {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--отступ-блока);
+  padding-left: clamp(20px, 3vw, 36px);
+}
+
+#экран-02 .экран-02__нить::before {
+  content: "";
+  position: absolute;
+  top: clamp(20px, 2vw, 28px);
+  bottom: clamp(20px, 2vw, 28px);
+  left: 0;
+  width: var(--нить);
+}
+
+#экран-02 .экран-02__вопрос {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(116px, 12vw, 164px);
+  margin: 0;
+  padding: clamp(20px, 2.3vw, 32px);
+  border: var(--нить) solid;
+  border-radius: var(--радиус-карточки);
+  box-shadow: var(--тень-плиты);
+}
+
+#экран-02 .экран-02__вопрос::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: clamp(-25px, -3vw, -19px);
+  width: clamp(9px, 1vw, 12px);
+  height: clamp(9px, 1vw, 12px);
+  border-radius: var(--радиус);
+  transform: translateY(-50%);
+}
+
+#экран-02 .экран-02__вопрос b {
+  font-size: var(--кегль-текст);
+  line-height: 1.42;
+}
+
+#экран-02 .экран-02__вопрос--первый {
+  grid-column: 1 / -1;
+  min-height: clamp(132px, 13vw, 174px);
+}
+
+#экран-02.светлый .экран-02__нить::before {
+  background: var(--цвет-линия);
+}
+
+#экран-02.тёмный .экран-02__нить::before {
+  background: var(--цвет-линия);
+}
+
+#экран-02.светлый .экран-02__вопрос {
+  background: var(--цвет-фон-карточки);
+  border-color: var(--цвет-линия);
+}
+
+#экран-02.тёмный .экран-02__вопрос {
+  background: var(--цвет-фон-карточки);
+  border-color: var(--цвет-линия);
+}
+
+#экран-02.светлый .экран-02__вопрос::before {
+  background: var(--цвет-акцент);
+}
+
+#экран-02.тёмный .экран-02__вопрос::before {
+  background: var(--цвет-акцент);
+}
+
+#экран-02.светлый .экран-02__вопрос b {
+  color: var(--цвет-текст);
+}
+
+#экран-02.тёмный .экран-02__вопрос b {
+  color: var(--цвет-текст);
+}
+
+@media (max-width: 760px) {
+  #экран-02 .экран-02__сетка {
+    grid-template-columns: 1fr;
+    gap: var(--отступ-секции-тихо);
+  }
+
+  #экран-02 .экран-02__шапка {
+    position: static;
+  }
+
+  #экран-02 .экран-02__шапка h2 {
+    max-width: none;
+  }
+
+  #экран-02 .экран-02__нить {
+    grid-template-columns: 1fr;
+  }
+
+  #экран-02 .экран-02__вопрос--первый {
+    grid-column: auto;
+  }
+}

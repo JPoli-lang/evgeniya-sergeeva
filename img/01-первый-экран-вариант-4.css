@@ -21,7 +21,7 @@
   padding: 28px clamp(44px, 5vw, 88px) 34px;
   background:
     radial-gradient(circle at 72% 34%, rgb(201 168 106 / 18%), transparent 25%),
-    radial-gradient(circle at 50% 85%, rgb(93 86 152 / 18%), transparent 33%),
+    radial-gradient(circle at 50% 85%, color-mix(in srgb, var(--цвет-линия) 18%, transparent), transparent 33%),
     linear-gradient(115deg, #20222b 0%, var(--ink) 44%, #24222d 100%);
 }
 
@@ -64,13 +64,13 @@
 .brand__mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgb(201 168 106 / .7); border-radius: 50%; color: var(--gold); font-family: var(--serif); font-size: 14px; font-weight: 600; }
 .brand__text { display: grid; }
 .brand__name { font-family: var(--serif); font-size: 25px; font-weight: 600; letter-spacing: -.02em; }
-.brand__line { margin-top: 7px; color: var(--gold); font-size: 9px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+.brand__line { margin-top: 7px; color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .topbar__trust { margin: 0; color: rgb(247 245 242 / .84); font-size: 13px; font-weight: 600; }
 .topbar__action { justify-self: end; display: inline-flex; gap: 10px; align-items: center; padding: 14px 22px; border-radius: 999px; background: var(--gold); color: var(--ink); font-size: 13px; font-weight: 700; box-shadow: 0 10px 35px rgb(0 0 0 / .2); }
 
 .hero__layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(450px, .86fr) minmax(500px, 1.14fr); align-items: end; max-width: 1420px; min-height: 625px; margin: 0 auto; }
 .hero__copy { align-self: center; max-width: 545px; padding-bottom: 25px; }
-.eyebrow { display: flex; align-items: center; gap: 14px; margin: 0 0 24px; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.eyebrow { display: flex; align-items: center; gap: 14px; margin: 0 0 24px; color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
 .eyebrow > span:first-child { width: 34px; height: 1px; background: currentColor; }
 #экран-1 h1 { margin: 0; font-family: var(--serif); font-size: clamp(58px, 5.25vw, 82px); font-weight: 600; letter-spacing: -.048em; line-height: .91; }
 #экран-1 h1 em { color: var(--gold); font-style: normal; }
@@ -82,7 +82,7 @@
 .button--primary { background: var(--gold); color: var(--ink); box-shadow: 0 0 0 1px rgb(255 240 203 / .3) inset, 0 12px 32px rgb(0 0 0 / .26); }
 .button--primary:hover, .topbar__action:hover { background: #dfbe82; }
 .hero__price { display: grid; color: var(--paper); font-family: var(--serif); font-size: 25px; line-height: .9; }
-.hero__price small { margin-top: 7px; color: rgb(247 245 242 / .6); font-family: var(--sans); font-size: 10px; letter-spacing: .03em; }
+.hero__price small { margin-top: 7px; color: rgb(247 245 242 / .6); font-family: var(--sans); font-size: 13px; letter-spacing: .02em; }
 
 .portrait { position: relative; isolation: isolate; align-self: end; justify-self: end; width: min(100%, 640px); height: 650px; margin: 0 -6px 0 0; }
 .portrait__disc { position: absolute; z-index: -3; width: 590px; height: 590px; top: 10px; right: -12px; border-radius: 50%; background: radial-gradient(ellipse at 31% 22%, rgb(255 245 211 / .86) 0 1%, rgb(255 229 158 / .34) 9%, transparent 31%), radial-gradient(ellipse at 76% 76%, rgb(48 37 20 / .7) 0, transparent 53%), radial-gradient(circle at 49% 47%, transparent 48%, rgb(77 57 26 / .46) 84%, rgb(43 35 24 / .74) 100%), conic-gradient(from 215deg at 47% 46%, #4f3e23 0deg, #85662f 18%, #e1c77d 36%, #9e7836 55%, #d0ad60 69%, #6e5429 83%, #4b3c27 100%); box-shadow: 0 0 30px rgb(201 168 106 / .42), 0 0 96px rgb(201 168 106 / .24), inset 28px 22px 64px rgb(255 241 191 / .23), inset -38px -32px 76px rgb(25 21 16 / .64), inset 0 0 0 1px rgb(255 232 168 / .16); }
@@ -94,7 +94,7 @@
 .portrait__orbit--three { width: 474px; height: 700px; top: -38px; right: 72px; border-color: rgb(235 206 137 / .28); transform: rotate(-21deg); }
 .portrait__orbit--four { width: 690px; height: 298px; top: 164px; right: -22px; border-color: rgb(246 213 137 / .24); transform: rotate(-12deg); }
 .portrait__orbit--five { width: 385px; height: 576px; top: 4px; right: 128px; border-color: rgb(242 205 125 / .39); transform: rotate(24deg); }
-.portrait__aura { position: absolute; z-index: -1; width: 506px; height: 520px; top: 42px; right: 32px; border-radius: 48% 52% 46% 54%; background: radial-gradient(ellipse at 43% 26%, rgb(255 222 145 / .45), transparent 35%), radial-gradient(ellipse at 58% 64%, rgb(218 172 84 / .27), transparent 60%); filter: blur(19px); opacity: .88; }
+.portrait__aura { position: absolute; z-index: -1; width: 506px; height: 520px; top: 42px; right: 32px; border-radius: 48% 52% 46% 54%; background: radial-gradient(ellipse at 43% 26%, color-mix(in srgb, var(--цвет-тёплый-мягкий) 45%, transparent), transparent 35%), radial-gradient(ellipse at 58% 64%, rgb(218 172 84 / .27), transparent 60%); filter: blur(19px); opacity: .88; }
 .portrait__image { position: absolute; z-index: 1; right: 14px; bottom: 0; display: block; width: auto; height: 650px; max-width: none; filter: drop-shadow(0 0 2px rgb(236 204 128 / .74)) drop-shadow(0 0 15px rgb(201 168 106 / .52)); mask-image: linear-gradient(to bottom, #000 0 76%, rgb(0 0 0 / .95) 82%, rgb(0 0 0 / .5) 92%, transparent 100%); }
 .portrait__fade { position: absolute; z-index: 2; right: -1px; bottom: -1px; width: 592px; height: 145px; pointer-events: none; background: linear-gradient(to bottom, transparent 0%, rgb(36 34 45 / .12) 22%, rgb(36 34 45 / .48) 58%, rgb(36 34 45 / .9) 88%, #24222d 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 100%); }
 
@@ -145,7 +145,7 @@
   .brand { gap: 8px; }
   .brand__mark { width: 29px; height: 29px; font-size: 11px; }
   .brand__name { font-size: 20px; }
-  .brand__line { margin-top: 4px; font-size: 7px; letter-spacing: .16em; }
+  .brand__line { margin-top: 4px; font-size: 13px; letter-spacing: .08em; }
   .topbar__trust, .topbar__action { display: none; }
 
   .hero__layout {
@@ -169,7 +169,7 @@
     gap: 10px;
     margin: 0 0 15px;
     color: var(--gold);
-    font-size: clamp(8px, 2.4vw, 10px);
+    font-size: 13px;
     line-height: 1.35;
     letter-spacing: .095em;
   }
@@ -190,7 +190,7 @@
     max-width: 35ch;
     margin: 17px 0 0;
     color: rgb(247 245 242 / .83);
-    font-size: clamp(12px, 3.45vw, 14px);
+    font-size: 16px;
     line-height: 1.48;
   }
 
@@ -203,9 +203,9 @@
     margin-top: 19px;
   }
 
-  .button { min-width: 0; min-height: 52px; justify-content: center; padding: 0 15px; font-size: 12px; white-space: nowrap; }
+  .button { min-width: 0; min-height: 52px; justify-content: center; padding: 0 15px; font-size: 13px; white-space: nowrap; }
   .hero__price { min-width: 0; color: rgb(247 245 242 / .98); font-size: clamp(22px, 6.7vw, 26px); line-height: .94; white-space: nowrap; }
-  .hero__price small { max-width: 88px; margin-top: 4px; color: rgb(247 245 242 / .72); font-size: 8px; line-height: 1.2; letter-spacing: .02em; white-space: normal; }
+  .hero__price small { max-width: 112px; margin-top: 4px; color: rgb(247 245 242 / .72); font-size: 13px; line-height: 1.2; letter-spacing: .02em; white-space: normal; }
 
   .portrait {
     position: relative;
@@ -368,7 +368,7 @@
     z-index: 3;
     max-width: 50%;
     margin-bottom: 12px;
-    font-size: clamp(7.75px, 2.328vw, 9.7px);
+    font-size: 13px;
   }
 
   .eyebrow > span:first-child { display: none; }
@@ -391,7 +391,7 @@
     z-index: 3;
     max-width: 34ch;
     margin-top: 29px;
-    font-size: clamp(13px, 3.55vw, 15px);
+    font-size: 16px;
     line-height: 1.48;
   }
 
@@ -406,7 +406,7 @@
     margin-top: 20px;
   }
 
-  .button { min-width: 0; min-height: 53px; justify-content: center; padding-inline: 15px; font-size: 12px; white-space: nowrap; }
+  .button { min-width: 0; min-height: 53px; justify-content: center; padding-inline: 15px; font-size: 13px; white-space: nowrap; }
 
   .hero__price {
     font-size: clamp(20px, 6.2vw, 25px);
@@ -417,7 +417,7 @@
   .hero__price small {
     max-width: 100px;
     margin-top: 5px;
-    font-size: 9px;
+    font-size: 13px;
   }
 }
 
@@ -468,7 +468,7 @@
   .eyebrow {
     max-width: 50%;
     margin-bottom: 11px;
-    font-size: clamp(7px, 2.15vw, 9px);
+    font-size: 13px;
     line-height: 1.35;
   }
 
@@ -496,7 +496,7 @@
   .lead {
     max-width: 31ch;
     margin-top: clamp(58px, 20vw, 86px);
-    font-size: clamp(13px, 3.55vw, 15px);
+    font-size: 16px;
     line-height: 1.38;
   }
 
@@ -518,7 +518,7 @@
     background-position: center, 74% top;
     background-repeat: no-repeat;
   }
-  .hero__copy { padding-top: clamp(230px, 60vw, 280px); }
+  .hero__copy { padding-top: clamp(268px, max(84vw, 50svh), 470px); }
   .portrait {
     top: 0;
     right: calc(-1 * clamp(18px, 5vw, 28px));
@@ -531,7 +531,7 @@
   }
   .eyebrow { max-width: none; margin-bottom: 10px; }
   #экран-1 h1 { max-width: none; font-size: clamp(36px, 10vw, 44px); line-height: 1.02; letter-spacing: -.035em; text-shadow: 0 2px 14px rgb(0 0 0 / .8); }
-  .lead { max-width: 36ch; margin-top: 16px; font-size: clamp(13px, 3.55vw, 15px); line-height: 1.45; text-shadow: 0 2px 10px rgb(0 0 0 / .8); }
+  .lead { max-width: 36ch; margin-top: 16px; font-size: 16px; line-height: 1.45; text-shadow: 0 2px 10px rgb(0 0 0 / .8); }
   .hero__actions { margin-top: 19px; }
 }
 
@@ -543,16 +543,3 @@
   .portrait, .portrait__image { height: 520px; }
 }
 
-/* Short mobile windows: the decision button must be visible without scrolling. */
-@media (max-width: 760px) {
-  .hero { min-height: 548px; padding-bottom: 14px; }
-  .topbar { min-height: 39px; }
-  .hero__copy { padding-top: clamp(140px, 39vw, 175px); }
-  .eyebrow { margin-bottom: 6px; font-size: 9px; }
-  #экран-1 h1 { font-size: clamp(29px, 8.5vw, 36px); line-height: .93; }
-  .lead { margin-top: 10px; font-size: clamp(12.5px, 3.45vw, 14px); line-height: 1.32; }
-  .hero__actions { margin-top: 12px; }
-  .button { min-height: 48px; font-size: 12px; }
-  .brand__line { font-size: 12px; }
-  .hero__price small { font-size: 12px; line-height: 1.25; }
-}
