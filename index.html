@@ -212,9 +212,24 @@
         </ul>
 
         <p class="экран-05__вывод">Бухгалтерский и аналитический опыт не превращает нумерологию в математический расчёт. Но он сформировал привычку видеть структуру, проверять детали и не терять из виду суть вашего вопроса.</p>
+
+        <div class="экран-05__действия" aria-label="Связаться с Евгенией">
+          <a class="экран-05__кнопка экран-05__кнопка--telegram" data-contact-link="telegram" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+          <a class="экран-05__кнопка экран-05__кнопка--vk" data-contact-link="vk" target="_blank" rel="noopener noreferrer">Записаться через ВК</a>
+        </div>
       </div>
     </div>
   </div>
+  <script src="img/ссылки-связи.js"></script>
+  <script>
+    (function () {
+      var ссылки = window.СсылкиСвязи || {};
+      document.querySelectorAll("#экран-05 [data-contact-link]").forEach(function (кнопка) {
+        var адрес = ссылки[кнопка.getAttribute("data-contact-link")];
+        if (адрес) кнопка.href = адрес;
+      });
+    }());
+  </script>
 </section>
 </body>
 </html>

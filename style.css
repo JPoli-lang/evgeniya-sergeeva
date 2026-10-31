@@ -2377,6 +2377,63 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       border-color: var(--цвет-линия);
     }
 
+    #экран-05 .экран-05__действия {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: clamp(26px, 3.5vw, 40px);
+    }
+
+    #экран-05 .экран-05__кнопка {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border: var(--нить) solid;
+      border-radius: var(--кнопка-радиус);
+      font: inherit;
+      font-size: var(--кегль-текст);
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      transition: transform var(--длительность) var(--плавность), background-color var(--длительность) var(--плавность), border-color var(--длительность) var(--плавность), box-shadow var(--длительность) var(--плавность);
+    }
+
+    #экран-05 .экран-05__кнопка:hover {
+      transform: translateY(-2px);
+    }
+
+    #экран-05 .экран-05__кнопка:focus-visible {
+      outline: 2px solid var(--цвет-акцент-яркий);
+      outline-offset: 4px;
+    }
+
+    #экран-05 .экран-05__кнопка--telegram {
+      color: var(--цвет-текст);
+      background: color-mix(in srgb, var(--цвет-фон-карточки) 48%, transparent);
+      border-color: var(--цвет-линия);
+    }
+
+    #экран-05 .экран-05__кнопка--telegram:hover {
+      border-color: var(--цвет-акцент-яркий);
+      box-shadow: var(--тень);
+    }
+
+    #экран-05 .экран-05__кнопка--vk {
+      color: var(--цвет-на-акценте);
+      background: var(--цвет-акцент);
+      border-color: var(--цвет-акцент);
+      box-shadow: var(--тень);
+    }
+
+    #экран-05 .экран-05__кнопка--vk:hover {
+      background: var(--цвет-акцент-яркий);
+      border-color: var(--цвет-акцент-яркий);
+      box-shadow: var(--тень-глубокая);
+    }
+
     @media (max-width: 760px) {
       #экран-05 .экран-05__фон::before {
         width: 104vw;
@@ -2427,6 +2484,15 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
       #экран-05 .экран-05__подпись-числа {
         max-width: 17ch;
+      }
+
+      #экран-05 .экран-05__действия {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      #экран-05 .экран-05__кнопка {
+        width: 100%;
       }
 
     }
