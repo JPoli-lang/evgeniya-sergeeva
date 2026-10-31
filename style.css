@@ -2202,6 +2202,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       --экран-04-фон: var(--цвет-тёмный-фон);
       position: relative;
       overflow: hidden;
+      isolation: isolate;
       background: var(--экран-04-фон);
     }
 
@@ -2214,7 +2215,39 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     }
 
     #экран-04 .блок__внутри {
+      position: relative;
+      z-index: 1;
       padding-block: clamp(56px, 6vw, 90px);
+    }
+
+    #экран-04 .экран-04__голос {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      right: 0;
+      width: min(63%, 900px);
+      height: 100%;
+      margin: 0;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: 0.56;
+    }
+
+    #экран-04 .экран-04__голос::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, var(--экран-04-фон) 0%, color-mix(in srgb, var(--экран-04-фон) 82%, transparent) 42%, color-mix(in srgb, var(--экран-04-фон) 30%, transparent) 100%),
+        linear-gradient(0deg, var(--экран-04-фон) 0%, transparent 30%, var(--экран-04-фон) 100%);
+    }
+
+    #экран-04 .экран-04__голос img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
     }
 
     #экран-04 .экран-04__сцена {
@@ -2330,6 +2363,20 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     }
 
     @media (max-width: 760px) {
+      #экран-04 .экран-04__голос {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 32rem;
+        opacity: 0.48;
+      }
+
+      #экран-04 .экран-04__голос::after {
+        background:
+          linear-gradient(0deg, var(--экран-04-фон) 0%, color-mix(in srgb, var(--экран-04-фон) 55%, transparent) 52%, var(--экран-04-фон) 100%),
+          linear-gradient(90deg, var(--экран-04-фон) 0%, transparent 56%, var(--экран-04-фон) 100%);
+      }
+
       #экран-04 .блок__внутри {
         padding-block: var(--отступ-секции-тихо);
       }
