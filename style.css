@@ -2135,6 +2135,27 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       pointer-events: none;
     }
 
+    #экран-05 .экран-05__солнце {
+      position: absolute;
+      z-index: 2;
+      width: clamp(330px, 43vw, 640px);
+      aspect-ratio: 1;
+      top: clamp(-190px, -10vw, -100px);
+      left: clamp(-96px, 2vw, 42px);
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        var(--цвет-тёплый-мягкий) 0 1.5%,
+        color-mix(in srgb, var(--цвет-акцент-яркий) 74%, transparent) 3%,
+        color-mix(in srgb, var(--цвет-акцент) 44%, transparent) 14%,
+        color-mix(in srgb, var(--цвет-акцент) 15%, transparent) 34%,
+        transparent 68%
+      );
+      filter: blur(1px);
+      mix-blend-mode: screen;
+      opacity: .96;
+    }
+
     #экран-05 .экран-05__фон::before,
     #экран-05 .экран-05__фон::after {
       content: none;
@@ -2217,6 +2238,20 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       border: var(--нить) solid;
       border-radius: 50%;
       top: 9%;
+    }
+
+    #экран-05 .экран-05__портрет::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: 76%;
+      aspect-ratio: 1;
+      top: -19%;
+      left: -27%;
+      pointer-events: none;
+      background: radial-gradient(circle, color-mix(in srgb, var(--цвет-акцент-яркий) 40%, transparent) 0, transparent 65%);
+      mix-blend-mode: screen;
+      opacity: .7;
     }
 
     #экран-05.тёмный .экран-05__портрет::before,
@@ -2388,8 +2423,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
+      min-height: 57px;
+      padding: 0 24px;
       border: var(--нить) solid;
       border-radius: var(--кнопка-радиус);
       font: inherit;
@@ -2435,6 +2470,12 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     }
 
     @media (max-width: 760px) {
+      #экран-05 .экран-05__солнце {
+        width: 300px;
+        top: -125px;
+        left: -100px;
+      }
+
       #экран-05 .экран-05__фон::before {
         width: 104vw;
         right: -43%;
@@ -2458,6 +2499,10 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
       #экран-05 .экран-05__портрет {
         min-height: min(112vw, 440px);
+      }
+
+      #экран-05 .экран-05__портрет img {
+        object-position: center 18%;
       }
 
       #экран-05 .экран-05__содержание {
