@@ -2111,14 +2111,14 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       background:
         linear-gradient(90deg, color-mix(in srgb, var(--цвет-тёмный-фон) 86%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 68%, transparent) 52%, color-mix(in srgb, var(--цвет-тёмный-фон) 42%, transparent) 100%),
         linear-gradient(0deg, color-mix(in srgb, var(--цвет-тёмный-фон) 72%, transparent) 0%, transparent 44%),
-        url("img/финальная-золотая-траектория.png") center / cover no-repeat;
+        url("img/golden-trajectory.webp") center / cover no-repeat;
     }
 
     #экран-05.светлый {
       background:
         linear-gradient(90deg, color-mix(in srgb, var(--цвет-фон) 84%, transparent) 0%, color-mix(in srgb, var(--цвет-фон) 62%, transparent) 52%, color-mix(in srgb, var(--цвет-фон) 35%, transparent) 100%),
         linear-gradient(0deg, color-mix(in srgb, var(--цвет-фон) 68%, transparent) 0%, transparent 44%),
-        url("img/финальная-золотая-траектория.png") center / cover no-repeat;
+        url("img/golden-trajectory.webp") center / cover no-repeat;
     }
 
     #экран-05 .экран-05__внутри {
