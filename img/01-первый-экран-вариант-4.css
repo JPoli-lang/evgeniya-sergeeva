@@ -510,7 +510,7 @@
 /* Mobile cover: artwork and portrait lead into the text in normal flow. */
 @media (max-width: 760px) {
   #экран-1 { background: #181a21; }
-  .hero { min-height: 0; padding-bottom: clamp(56px, 16vw, 72px); background: linear-gradient(180deg, #20222b, #181a21 90%); }
+  .hero { min-height: 0; padding-bottom: clamp(52px, 14vw, 64px); background: linear-gradient(180deg, #20222b, #181a21 90%); }
   .hero__art {
     opacity: .85;
     background-image: linear-gradient(180deg, rgb(24 26 33 / .08) 0%, rgb(24 26 33 / .12) 32%, rgb(24 26 33 / .72) 62%, #181a21 100%), url('золотая-орбита-космического-времени.png');
@@ -518,7 +518,7 @@
     background-position: center, 74% top;
     background-repeat: no-repeat;
   }
-  .hero__copy { padding-top: clamp(268px, max(84vw, 50svh), 470px); }
+  .hero__copy { padding-top: clamp(150px, 40vw, 184px); }
   .portrait {
     top: 0;
     right: calc(-1 * clamp(18px, 5vw, 28px));
@@ -531,19 +531,20 @@
   }
   .eyebrow { max-width: none; margin-bottom: 10px; }
   #экран-1 h1 { max-width: none; font-size: clamp(36px, 10vw, 44px); line-height: 1.02; letter-spacing: -.035em; text-shadow: 0 2px 14px rgb(0 0 0 / .8); }
-  .lead { max-width: 36ch; margin-top: 16px; font-size: 16px; line-height: 1.45; text-shadow: 0 2px 10px rgb(0 0 0 / .8); }
-  .hero__actions {
-    display: flex;
+  .lead { max-width: 36ch; margin-top: 12px; font-size: 16px; line-height: 1.38; text-shadow: 0 2px 10px rgb(0 0 0 / .8); }
+  #экран-1 .hero__actions {
+    display: flex !important;
     align-items: stretch;
-    flex-direction: column;
-    gap: 13px;
-    margin-top: 24px;
+    flex-direction: column !important;
+    gap: 10px;
+    margin-top: 17px;
   }
-  .button { width: 100%; }
-  .hero__price {
+  .button { width: 100%; min-height: 48px; }
+  #экран-1 .hero__price {
     display: flex;
     align-items: baseline;
     gap: 9px;
+    width: 100%;
     padding-inline: 4px;
   }
   .hero__price small { max-width: none; margin-top: 0; }
