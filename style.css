@@ -2325,7 +2325,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
     #экран-05 .экран-05__цифры {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1fr);
       gap: var(--отступ-блока);
       margin: clamp(28px, 4vw, 46px) 0;
       padding: clamp(18px, 2vw, 24px) 0;
