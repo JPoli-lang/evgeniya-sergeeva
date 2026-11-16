@@ -5,8 +5,8 @@
   --violet: #5D5698;
   --violet-pale: #B8BEDC;
   --gold: #C9A86A;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: Manrope, Arial, sans-serif;
+  --serif: 'Times New Roman', Times, serif;
+  --sans: 'Segoe UI', Arial, sans-serif;
 }
 
 #экран-1, #экран-1 * { box-sizing: border-box; }
