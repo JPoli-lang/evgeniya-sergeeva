@@ -34,7 +34,16 @@
   mask-image: linear-gradient(90deg, #000, transparent 72%);
 }
 
-.hero__art { position: absolute; z-index: -1; inset: 0; pointer-events: none; background-image: linear-gradient(90deg, #20222b 0%, rgb(32 34 43 / .96) 29%, rgb(32 34 43 / .62) 47%, rgb(32 34 43 / .12) 74%, rgb(32 34 43 / .2) 100%), linear-gradient(0deg, rgb(32 34 43 / .45) 0%, transparent 32%, rgb(32 34 43 / .18) 100%), url('golden-orbit.webp'); background-position: center, center, center; background-size: auto, auto, cover; filter: saturate(.82) contrast(.93); }
+.hero__art { position: absolute; z-index: -1; inset: 0; pointer-events: none; background-image: linear-gradient(90deg, #20222b 0%, rgb(32 34 43 / .96) 29%, rgb(32 34 43 / .62) 47%, rgb(32 34 43 / .12) 74%, rgb(32 34 43 / .2) 100%), linear-gradient(0deg, rgb(32 34 43 / .45) 0%, transparent 32%, rgb(32 34 43 / .18) 100%); background-position: center, center; background-size: auto, auto; filter: saturate(.82) contrast(.93); }
+
+/* The decorative orbit is desktop-only: a phone must not fetch it before mobile styles apply. */
+@media (min-width: 761px) {
+  .hero__art {
+    background-image: linear-gradient(90deg, #20222b 0%, rgb(32 34 43 / .96) 29%, rgb(32 34 43 / .62) 47%, rgb(32 34 43 / .12) 74%, rgb(32 34 43 / .2) 100%), linear-gradient(0deg, rgb(32 34 43 / .45) 0%, transparent 32%, rgb(32 34 43 / .18) 100%), url('golden-orbit.webp');
+    background-position: center, center, center;
+    background-size: auto, auto, cover;
+  }
+}
 
 .hero__glow { position: absolute; z-index: -1; border-radius: 50%; filter: blur(10px); pointer-events: none; }
 .hero__glow--one { width: 380px; height: 380px; right: -80px; top: 40px; background: rgb(201 168 106 / .13); }
