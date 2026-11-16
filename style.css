@@ -2325,7 +2325,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
     #экран-05 .экран-05__цифры {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--отступ-блока);
       margin: clamp(28px, 4vw, 46px) 0;
       padding: clamp(18px, 2vw, 24px) 0;
@@ -2442,14 +2442,16 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     }
 
     #экран-05 .экран-05__кнопка--telegram {
-      color: var(--цвет-текст);
-      background: color-mix(in srgb, var(--цвет-фон-карточки) 48%, transparent);
-      border-color: var(--цвет-линия);
+      color: var(--цвет-на-акценте);
+      background: var(--цвет-акцент);
+      border-color: var(--цвет-акцент);
+      box-shadow: var(--тень);
     }
 
     #экран-05 .экран-05__кнопка--telegram:hover {
+      background: var(--цвет-акцент-яркий);
       border-color: var(--цвет-акцент-яркий);
-      box-shadow: var(--тень);
+      box-shadow: var(--тень-глубокая);
     }
 
     #экран-05 .экран-05__кнопка--vk {
