@@ -65,7 +65,7 @@
 .brand__text { display: grid; }
 .brand__name { font-family: var(--serif); font-size: 25px; font-weight: 600; letter-spacing: -.02em; }
 .brand__line { margin-top: 7px; color: var(--gold); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.topbar__trust { margin: 0; color: rgb(247 245 242 / .84); font-size: 13px; font-weight: 600; }
+.topbar__trust { margin: 0; color: rgb(247 245 242 / .84); font-size: 16px; font-weight: 600; }
 .topbar__action { justify-self: end; display: inline-flex; gap: 10px; align-items: center; padding: 14px 22px; border-radius: 999px; background: var(--gold); color: var(--ink); font-size: 13px; font-weight: 700; box-shadow: 0 10px 35px rgb(0 0 0 / .2); }
 
 .hero__layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(450px, .86fr) minmax(500px, 1.14fr); align-items: end; max-width: 1420px; min-height: 625px; margin: 0 auto; }
@@ -564,7 +564,7 @@
   .portrait__image { width: 150px; height: 150px; }
   .eyebrow { display: none; }
   #экран-1 h1 { font-size: 27px; }
-  .lead { margin-top: 8px; font-size: var(--кегль-мелкий); line-height: 1.24; }
+  .lead { margin-top: 8px; font-size: var(--кегль-текст); line-height: 1.24; }
   #экран-1 .hero__actions { margin-top: 8px; }
 }
 

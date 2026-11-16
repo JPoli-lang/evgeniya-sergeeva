@@ -2279,7 +2279,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
       align-items: center;
       gap: var(--отступ-блока);
       margin: 0 0 clamp(12px, 1.5vw, 18px);
-      font-size: var(--кегль-кикер);
+      font-size: var(--кегль-текст);
       font-weight: 700;
       letter-spacing: var(--разрядка-кикера);
       text-transform: uppercase;
